@@ -1,0 +1,26 @@
+
+.button{
+  margin-top: -20px;
+}
+h1{
+  margin-top: -19px;
+  font-size: 24px;
+  font-family: -webkit-body;
+  color: 	#D2691E;
+}
+.top{
+  margin-top: 10px;
+}
+.form-all {
+  background: url('../lib/iStock_000066664411.jpg')
+  no-repeat;
+  background-size: cover;
+
+} 
+.submit{
+  margin-top: 18px;
+}
+
+.text-data{
+  margin-bottom: 15px;
+}

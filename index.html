@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurant Managemant</title>
+    <link rel="stylesheet" type="text/css" href="assets\css\indexstyle.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="assets/lib/ng-tag/ng-tags-input.min.css">
+     <link rel="stylesheet" type="text/css" href="assets/lib/ng-tag/ng-tags-input.bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="assets/css/restaurantDetail.css">
+     <link rel="stylesheet" type="text/css" href="assets/css/restaurantView.css">
+     <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css" />
+</head>
+
+<body>
+   
+    <div ui-view></div>
+
+    <script src="assets/lib/angular/angular.min.js"></script>
+    <script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="assets/lib/angular/angular-resource.js" ></script>
+    <script src="assets/lib/angular/angular-sanitize.js" ></script>
+    <script src="assets/lib/angular/angular-ui-router.min.js"></script>
+    <script src="assets/lib/angular/angular-animate.min.js" ></script>
+    
+    <script src="assets/lib/ng-tag/ng-tags-input.min.js"></script>
+   
+    <script src="app/app.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="assets/lib/lodash/dist/lodash.js"></script>
+    <script src="app/shared/layout/header.cntrl.js"></script>
+    <script src="app/components/landing/landing.controller.js"></script>
+    <script src="app/components/restaurantList/restaurantList.controller.js"></script>
+    <script src="app/components/restaurantList/restaurantList.service.js"></script>
+    <script src="app/components/addRestaurant/addRestaurant.controller.js"></script>
+    <script src="app/components/addRestaurant/addRestaurant.service.js"></script>
+    <script src="app/components/dashboard/dashboard.controller.js"></script>
+    <script src="app/components/dashboard/dashboard.service.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+.div-container{
+    background-color: #2874f0;
+    color: #FFFFFF; 
+    height: 70px; 
+}
+.h1-div{
+    margin-top: 21px;
+    color: white;
+}
+.largenav {
+    display: none;
+    color: white;
+    margin-bottom: -6px;
+}
+.a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+.a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.home-div{
+    margin-top: 25px;
+}
+.restaurant-div{
+    margin-left: -25px;
+}
+.home-div1{
+    margin-right: -16px;
+}
+
+.home-icon{
+    margin-right: 5px;
+}

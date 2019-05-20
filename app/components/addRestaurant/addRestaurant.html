@@ -1,0 +1,47 @@
+
+<div class="container well top ">
+  <form name="myForm" novalidate>
+     <h1>Add Restaurant</h1>
+     <div class="row">
+        <div class="form-group col-md-3">
+           <input type="text" class="form-control input-md"  ng-model="$adrs.restaurant.name" placeholder="Restaurant Name" required="required"/>
+        </div>
+     </div>
+
+     <div class="row">
+        <div class="form-group col-md-3 text-data">
+           <textarea rows="4" class="form-control input-md"  ng-model="$adrs.restaurant.description" placeholder="Enter Description" required="required"></textarea>
+        </div>
+     </div>
+
+     <div class="row">
+        <div class="form-group col-md-3 text-data">
+           <input type="number" class="form-control input-md"  ng-model="$adrs.restaurant.mobileNo" placeholder="Mobile No" required="required"/>
+        </div>
+     </div>
+
+     <div class="row">
+        <div class="form-group col-md-3 text-data">
+           <input type="text" class="form-control input-md"  ng-model="$adrs.restaurant.website" placeholder="Enter the Website" required="required"/>
+        </div>
+     </div>
+     
+     <div class="row">
+        <div class="form-group col-md-3 text-data">
+           <input type="text" class="form-control input-md"  ng-model="$adrs.restaurant.address" placeholder="Enter the Address" required="required"/>
+        </div>
+     </div>
+
+     <div class="row">
+        <div class="form-group col-md-3 text-data">
+           <input type="number" class="form-control input-md"  ng-model="$adrs.restaurant.approxCostForTwo" placeholder="Enter the Cost for Two People" required="required"/>
+        </div>
+     </div>
+     
+     <div class="row submit">
+        <div class="form-group col-md-1 button">
+           <button type="submit" class="form-control btn-success" ng-disabled="myForm.$invalid"  ng-click="$adrs.save()">Submit</button>
+        </div>
+     </div>
+  </form>
+</div>

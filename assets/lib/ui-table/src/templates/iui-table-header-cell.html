@@ -1,0 +1,11 @@
+<iui-sort-heading
+	ng-if="!(columnHeader.sortable === false)"
+	iui-sort-key="{{columnHeader.field}}"
+	iui-sort-by="iuiTable.sortingOptions.field"
+	iui-reverse="iuiTable.sortingOptions.reverse">
+	{{columnHeader.displayName}}
+</iui-sort-heading>
+<span ng-if="columnHeader.sortable === false">
+	{{columnHeader.displayName}}
+</span>
+

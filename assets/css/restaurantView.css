@@ -1,0 +1,58 @@
+img{
+ width: 100%;
+
+}
+.div1{
+
+  height: 330px;
+  margin-top: 10px;
+  margin-right: 20px;  
+}
+.div2{
+  margin-top: -68px;
+  padding: 10px;
+  margin-right: 20px; 
+ 
+}
+.price{
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding-top: 10px;
+}
+.discount{
+   text-align: center;
+   font-family: Times, Times New Roman, Georgia, serif;
+  
+   
+}
+.discount-div1{
+  margin-top: -26px;
+}
+.description{
+  text-align: center;
+  font-family: Lucida, Courier, monospace;
+  margin-top:5px;
+
+}
+.p1{
+  margin-left: 3px;
+}
+.hover{
+  
+  display: inline;
+  position: relative;
+  vertical-align: top; 
+  }
+  .hover1{
+    /*box-shadow: 0 3px 16px 0 rgba(0, 0, 0, .11);*/
+    display: inline;
+    position: relative;
+    vertical-align: top;
+   
+  }
+  .div1:hover {
+    box-shadow: 0 3px 16px 0 rgba(0, 0, 0, .11);
+  
+  }
+
+  

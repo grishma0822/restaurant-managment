@@ -1,0 +1,68 @@
+// pager button styles
+
+@import 'compass/css3/transform';
+
+.iui-sort-heading {
+  display: inline-block;
+  text-decoration: none;
+  padding-right: 20px;
+  position: relative;
+  &:after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -3px;
+    content: ' ';
+    width: 0;
+    height: 0;
+    opacity: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid $sg_light_hightlight;
+    @include transition(all 500ms ease-in-out);
+  }
+  &:focus:after, &.sorted:after {
+    opacity: 1;
+  }
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+  &.sorted.reversed:after {
+    @include transform(rotateX(180deg));
+  }
+}
+
+.pager-first-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 8.7px 5px 0;
+  border-color: transparent $sg_secondary transparent transparent;
+  margin-left: 2px;
+  margin-left: 0;
+}
+
+.pager-first-bar {
+  width: 10px;
+  border-left: 2px solid $sg_secondary;
+  margin-top: -6px;
+  height: 12px;
+  margin-left: -3px;
+}
+
+.pager-last-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8.7px;
+  border-color: transparent transparent transparent $sg_secondary;
+  margin-left: -1px;
+}
+
+.pager-last-bar {
+  width: 10px;
+  border-left: 2px solid $sg_secondary;
+  margin-top: -6px;
+  height: 12px;
+  margin-left: 1px;
+}

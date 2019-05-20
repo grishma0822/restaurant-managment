@@ -1,0 +1,59 @@
+<div class="xcdify-templator-modal">
+    <form name="$tabsett.settingForm" class="form-horizontal" ng-submit="$tabsett.submit($tabsett.settingForm, $tabsett.form)">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$tabsett.dismiss()" aria-hidden="true">&times;</button>
+            <h3 md-theme-fg class="md-primary">Table Settings</h3>
+        </div>
+
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <md-input-container flex-gt-lg>
+                        <label>Name</label>
+                        <input type="text" ng-model="$tabsett.form.name" aria-label="name" name="name">
+                    </md-input-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <md-input-container flex-gt-lg>
+                        <label>No. of Columns</label>
+                        <input type="text" ng-model="$tabsett.form.tablecolumn" aria-label="tablecolumn" name="tablecolumn">
+                    </md-input-container>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <label>Column Names</label>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6" ng-repeat="column in $tabsett.form.columns">
+                            <md-input-container flex-gt-lg>
+                                <input type="text" ng-model="column.name" aria-label="column">
+                            </md-input-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+            <md-button class="md-icon-button md-primary pull-left" ng-click="$tabsett.remove()" aria-label="More">
+                <md-icon>
+                    <i class="fa fa-trash"></i>
+                </md-icon>
+            </md-button>
+            <md-button class="md-icon-button md-primary pull-right" ng-click="$tabsett.dismiss()" aria-label="More">
+                <md-icon>
+                    <i class="fa fa-close"></i>
+                </md-icon>
+            </md-button>
+            <md-button type="submit" class="md-icon-button md-primary pull-right" aria-label="More">
+                <md-icon>
+                    <i class="fa fa-check"></i>
+                </md-icon>
+            </md-button>
+            
+        </div>
+    </form>
+</div>

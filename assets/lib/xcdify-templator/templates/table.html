@@ -1,0 +1,27 @@
+<div class="card card-1 card-table-height">
+	<div class="box">
+		<div class="box-header">
+			<h3 md-theme-fg class="md-primary" ng-bind="data.name"></h3>
+			<div class="box-header-btns pull-right">
+				<a title="settings" ng-click="templatorComponent.openSettings(data)"><i class="fa fa-gear"></i></a>
+				<a title="Remove grid" ng-click="removeComponent(data)"><i class="fa fa-trash"></i></a>
+			</div>
+		</div>
+		<div class="box-content box-no-padding">
+			<md-table-container>
+			   	<table md-table>
+			      	<thead md-head>
+			         	<tr md-row>
+			         		<th md-column ng-repeat="column in data.properties.columns"><span ng-bind="column.name"></span></th>
+			         	</tr>
+			      	</thead>
+			      	<tbody md-body>
+			         	<tr md-row>
+			                
+			         	</tr>
+			      	</tbody>                                
+			   	</table>
+			</md-table-container>
+		</div>
+	</div>
+</div>

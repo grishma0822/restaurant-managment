@@ -1,0 +1,55 @@
+<div class="iui-table">
+  <table class="table responsive {{iuiTable.tableClass}}">
+    <caption ng-if="iuiTable.tableCaption">
+      <span
+        ng-bind="iuiTable.tableCaption"
+        ng-class="{'sr-only':iuiTable.hideTableCaption}">
+      </span>
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col" ng-repeat="columnHeader in iuiTable.displayColumns | filter:{field:'checkbox'}" class="iui-table-header-{{columnHeader.field | lowercase}} {{columnHeader.columnClass}}">
+          <input type="checkbox" class="custom-checkbox in-table-header" ng-model="selectedAll" id="item-selected-{{iuiTable.tableClass}}" ng-click="checkAll()">
+          <label for="item-selected-{{iuiTable.tableClass}}"><span class="sr-only">Select All</span></label>
+          <span class="sr-only">Selected</span>
+        </th>
+        <th scope="col" ng-repeat="columnHeader in iuiTable.displayColumns | filter:{field:'unread'}" class="iui-table-header-{{columnHeader.field | lowercase}} {{columnHeader.columnClass}}">
+          <iui-sort-heading
+            iui-sort-key="{{columnHeader.field}}"
+            iui-sort-by="iuiTable.sortingOptions.field"
+            iui-reverse="iuiTable.sortingOptions.reverse">
+            <span class="unread-dot-indicator"></span>
+            <span class="sr-only">Unread</span>
+          </iui-sort-heading>
+        </th>
+        <th
+          scope="col"
+          ng-repeat="columnHeader in iuiTable.displayColumns | filter:{field:'!checkbox'} | filter:{field:'!Button'} | filter:{field:'!unread'}"
+          class="iui-table-header-{{columnHeader.field | lowercase}} {{columnHeader.columnClass}}" 
+          ng-include="(columnHeader.headerCellTemplate)? columnHeader.headerCellTemplate : iuiTable.settings.defaultHeaderCellTemplate">
+        </th>
+        <th scope="col" ng-repeat="columnHeader in iuiTable.displayColumns | filter:{field:'Button'}" class="iui-table-header-{{columnHeader.field | lowercase}} {{columnHeader.columnClass}}">
+          <span class="sr-only">Actions</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody ng-if="!iuiTable.serverSideSorting">
+      <tr
+        ng-repeat="row in iuiTable.rowData | orderBy:iuiTable.sortingOptions.field:iuiTable.sortingOptions.reverse | startFrom:(iuiTable.pagingOption.currentPage-1)*iuiTable.pagingOption.pageSize | limitTo:iuiTable.pagingOption.pageSize"
+        ng-include="(iuiTable.rowTemplate)?iuiTable.rowTemplate:iuiTable.settings.defaultRowTemplate">
+      </tr>
+    </tbody>
+    <tbody ng-if="iuiTable.serverSideSorting">
+      <tr
+        ng-repeat="row in iuiTable.rowData | startFrom:(iuiTable.pagingOption.currentPage-1)*iuiTable.pagingOption.pageSize | limitTo:iuiTable.pagingOption.pageSize"
+        ng-include="(iuiTable.rowTemplate)?iuiTable.rowTemplate:iuiTable.settings.defaultRowTemplate">
+      </tr>
+    </tbody>
+  </table>
+  <iui-pager 
+    ng-if="iuiTable.rowData.length > 0 && !iuiTable.hideTablePager"
+    page="iuiTable.pagingOption.currentPage"
+    page-size="iuiTable.pagingOption.pageSize"
+    total-records="iuiTable.rowData.length">
+  </iui-pager>
+</div>

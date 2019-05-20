@@ -1,0 +1,22 @@
+<div class="container">
+  <table  class="table table-bordered table-hover">
+     <thead >
+        <tr class="info">
+           <th>Restaurant Name</th>
+           <th>Description</th>
+           <th>Address</th>
+           <th>Contact No</th>
+           <th>Website</th>
+           <th>Approx Cost For Two People</th>
+        </tr>
+     </thead>
+     <tr ng-repeat="restaurant in $prdct.restaurants">
+        <td ng-bind="restaurant.name"></td>
+        <td ng-bind="restaurant.description"></td>
+        <td ng-bind="restaurant.address"></td>
+        <td ng-bind="restaurant.mobileNo"></td>
+        <td ng-bind="restaurant.website"></td>
+        <td ng-bind="restaurant.approxCostForTwo"></td>
+     </tr>
+  </table>
+</div>

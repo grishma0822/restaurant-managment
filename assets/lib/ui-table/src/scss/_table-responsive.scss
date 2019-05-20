@@ -1,0 +1,128 @@
+/*doc
+---
+title: Responsive Tables
+name: responsiveTable
+category: components
+---
+
+These CSS classes allow for `<table>`s to appear as a card style layout for smaller screens.
+
+<dl class="dl-horizontal dt-as-left-aligned short-list">
+  <dt><code>.responsive</code></dt>
+  <dd>for mobile (max-width: 767px)</dd>
+  <dt><code>.responsive-sm</code></dt>
+  <dd>for tablet (min-width: 768px and max-width: 991px)</dd>
+  <dt><code>.responsive-md</code></dt>
+  <dd>for small desktop (min-width: 992px and max-width: 1199px)</dd>
+</dl>
+
+All responsive tables must have the `.table` class
+
+The table headers must be repeated using the `data-header` attribute on each table cell
+
+We specifically did not create a `.responsive-lg` class because at that point, we should be using `<dl class="dl-horizontal dt-as-left-aligned">` instead
+
+```html_example
+
+<table class="table responsive responsive-sm responsive-md">
+  <thead>
+    <tr>
+      <th>Table Header 1</th>
+      <th>Table Header 2</th>
+      <th>Table Header 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-header="Table Header 1">Table Body 1</td>
+      <td data-header="Table Header 2">Table Body 2</td>
+      <td data-header="Table Header 3">Table Body 3</td>
+    </tr>
+    <tr>
+      <td data-header="Table Header 1">Table Body 1</td>
+      <td data-header="Table Header 2">Table Body 2</td>
+      <td data-header="Table Header 3">Table Body 3</td>
+    </tr>
+    <tr>
+      <td data-header="Table Header 1">Table Body 1</td>
+      <td data-header="Table Header 2">Table Body 2</td>
+      <td data-header="Table Header 3">Table Body 3</td>
+    </tr>
+  </tbody>
+</table>
+
+```
+
+*/
+
+
+@mixin responsive-table ($media-query, $column-width: 50%) {
+  @media #{$media-query} {
+    &, caption, colgroup, thead, tbody, tfoot, tr, th, td {
+      display: block;
+    }
+    > tbody > tr {
+      width: 100%;
+      max-width: 100%;
+      border-top: 1px solid $sg_light_grey_border;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    > thead > tr {
+      margin: -1px;
+      padding: 0;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip: rect(0, 0, 0, 0);
+      position: absolute;
+    }
+    > tbody > tr > td, > tbody > tr >th {
+      position: relative;
+      border: none;
+      padding-left: $column-width;
+      padding-top: 0;
+      padding-bottom: 6px;
+      min-height: 26px;
+      // standard row height (20px) + padding-bottom: 6px
+
+      text-align: left;
+      min-width: 100%;
+      width: inherit;
+      &:before {
+        content: attr(data-header);
+        /* Now like a table header */
+
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 0;
+        left: 0;
+
+        width: calc(#{$column-width} - 10px);
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.table.responsive {
+  @include responsive-table($mq-xs-screen-only);
+}
+
+.table.responsive-sm {
+  @include responsive-table($mq-sm-screen-only, 40%);
+}
+
+.table.responsive-md {
+  @include responsive-table($mq-md-screen-only, 35%);
+}
+
+/* 
+
+  Woah. Hold up. We may not need a .table.responsive-lg  
+  At this point maybe this structure shouldn't be a table and should be a <dl> instead
+
+*/
